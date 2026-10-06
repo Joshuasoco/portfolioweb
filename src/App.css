@@ -111,12 +111,12 @@
 }
 
 .button--primary {
-  background: var(--accent);
+  background: var(--brand);
   color: #fff;
 }
 
 .button--primary:hover {
-  background: var(--accent-hover);
+  background: var(--brand-hover);
 }
 
 .button--ghost {
@@ -202,14 +202,14 @@
 .nav__cta {
   padding: 5px 13px;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--brand);
   color: #fff;
   font-size: 13px;
   transition: background-color 0.2s ease;
 }
 
 .nav__cta:hover {
-  background: var(--accent-hover);
+  background: var(--brand-hover);
 }
 
 .nav__toggle {
@@ -300,256 +300,6 @@
 @media (min-width: 761px) {
   .nav__sheet {
     display: none;
-  }
-}
-
-/* ---------- Hero (mesh gradient, editorial type) ---------- */
-
-.hero {
-  position: relative;
-  display: grid;
-  min-height: 100svh;
-  isolation: isolate;
-  overflow: hidden;
-}
-
-.mesh {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.mesh__canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.48s ease;
-}
-
-.mesh[data-painted] .mesh__canvas {
-  opacity: 1;
-}
-
-.hero__mesh {
-  z-index: -1;
-  --mesh-base: #f2ede7;
-  --mesh-1: #bdd3ec;
-  --mesh-2: #c3c6ff;
-  --mesh-3: #ffd0b0;
-  --mesh-4: #f6bfd6;
-  --mesh-5: #cfe8dc;
-  --mesh-6: #fff3dc;
-}
-
-@media (prefers-color-scheme: dark) {
-  .hero__mesh {
-    --mesh-base: #09090f;
-    --mesh-1: #0d3a47;
-    --mesh-2: #2a2f86;
-    --mesh-3: #5a2a3c;
-    --mesh-4: #3a1f5a;
-    --mesh-5: #7a3a22;
-    --mesh-6: #12142c;
-  }
-}
-
-/* Scrim keeps body text readable wherever the mesh drifts, and eases into the page below. */
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    to bottom,
-    transparent 40%,
-    color-mix(in srgb, var(--bg) 22%, transparent)
-  );
-  pointer-events: none;
-}
-
-.hero__inner {
-  display: grid;
-  grid-template-rows: 1fr auto auto 1fr auto;
-  gap: 40px;
-  width: min(1080px, 100% - 44px);
-  margin-inline: auto;
-  padding: calc(var(--nav-h) + clamp(32px, 6svh, 72px)) 0 36px;
-}
-
-.hero__head {
-  grid-row: 2;
-}
-
-.hero__row {
-  grid-row: 3;
-}
-
-.hero__projects {
-  grid-row: 5;
-}
-
-.hero__inner > * {
-  animation: rise 0.64s var(--ease) both;
-}
-
-.hero__row {
-  animation-delay: 90ms;
-}
-
-.hero__projects {
-  animation-delay: 180ms;
-}
-
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-    filter: blur(4px);
-  }
-}
-
-.hero__eyebrow {
-  margin-bottom: 18px;
-  font-size: 15px;
-  font-weight: 500;
-  color: color-mix(in srgb, var(--text) 66%, transparent);
-}
-
-.hero__title {
-  max-width: 14ch;
-  font-size: clamp(44px, 8vw, 112px);
-  line-height: 0.98;
-  font-weight: 700;
-  letter-spacing: -0.045em;
-  text-wrap: balance;
-}
-
-.hero__row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: 32px 64px;
-}
-
-.hero__lead {
-  max-width: 520px;
-  font-size: clamp(17px, 1.8vw, 21px);
-  line-height: 1.45;
-  color: color-mix(in srgb, var(--text) 76%, transparent);
-}
-
-.hero__cta {
-  display: grid;
-  justify-items: end;
-  gap: 12px;
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.hero__fine {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: color-mix(in srgb, var(--text) 62%, transparent);
-}
-
-.hero__dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #34c759;
-  box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.5);
-  animation: pulse 2.4s ease-out infinite;
-}
-
-@keyframes pulse {
-  70% {
-    box-shadow: 0 0 0 7px rgba(52, 199, 89, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(52, 199, 89, 0);
-  }
-}
-
-.hero__projects {
-  display: grid;
-  gap: 18px;
-  padding-top: 22px;
-  border-top: 1px solid color-mix(in srgb, var(--text) 14%, transparent);
-}
-
-.hero__projects p {
-  font-size: 13px;
-  color: color-mix(in srgb, var(--text) 62%, transparent);
-}
-
-.hero__projects ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 14px 32px;
-}
-
-.hero__projects a {
-  font-size: 19px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: color-mix(in srgb, var(--text) 80%, transparent);
-  transition: color 0.2s ease;
-}
-
-.hero__projects a:hover {
-  color: var(--text);
-}
-
-.button--glass {
-  background: color-mix(in srgb, var(--bg) 55%, transparent);
-  border-color: color-mix(in srgb, var(--text) 12%, transparent);
-  color: var(--text);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.button--glass:hover {
-  background: color-mix(in srgb, var(--bg) 80%, transparent);
-}
-
-@media (max-width: 800px) {
-  .hero__row {
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-  }
-  .hero__cta {
-    justify-items: start;
-  }
-  .hero__projects ul {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 560px) {
-  .hero__inner {
-    gap: 28px;
-    padding-bottom: 24px;
-  }
-  .hero__cta,
-  .hero__actions {
-    width: 100%;
-  }
-  .hero__actions > * {
-    flex: 1 1 auto;
-    justify-content: center;
-  }
-  .hero__projects a {
-    font-size: 16px;
   }
 }
 
@@ -647,7 +397,7 @@
   height: 52px;
   margin-bottom: 6px;
   border-radius: 16px;
-  background: var(--surface);
+  background: var(--card);
   color: var(--text-3);
   box-shadow: var(--shadow-sm);
 }
@@ -889,7 +639,7 @@
   grid-column: 1 / -1;
 }
 
-.tile--accent {
+.tile--brand {
   background:
     radial-gradient(90% 120% at 100% 0%, rgba(175, 82, 222, 0.16), transparent 60%),
     radial-gradient(80% 120% at 0% 100%, rgba(0, 113, 227, 0.14), transparent 60%),
@@ -913,7 +663,7 @@
 .tile__list li {
   padding: 7px 14px;
   border-radius: 999px;
-  background: var(--surface);
+  background: var(--card);
   border: 1px solid var(--line);
   font-size: 14px;
   color: var(--text);
@@ -922,13 +672,13 @@
 
 @media (prefers-color-scheme: dark) {
   .tile {
-    background: var(--surface);
+    background: var(--card);
   }
-  .tile--accent {
+  .tile--brand {
     background:
       radial-gradient(90% 120% at 100% 0%, rgba(175, 82, 222, 0.22), transparent 60%),
       radial-gradient(80% 120% at 0% 100%, rgba(0, 113, 227, 0.2), transparent 60%),
-      var(--surface);
+      var(--card);
   }
   .tile__list li {
     background: rgba(255, 255, 255, 0.05);

@@ -20,9 +20,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // uiarc components theme off data-theme; mirror the system setting.
+      ;(() => {
+        const mq = matchMedia('(prefers-color-scheme: dark)')
+        const set = () =>
+          (document.documentElement.dataset.theme = mq.matches ? 'dark' : 'light')
+        set()
+        mq.addEventListener('change', set)
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
