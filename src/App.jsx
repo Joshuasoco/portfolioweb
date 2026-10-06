@@ -1,4 +1,3 @@
-import { About } from './components/About.jsx'
 import { Certifications } from './components/Certifications.jsx'
 import { Contact, Footer } from './components/Contact.jsx'
 import { Hero } from './components/Hero.jsx'
@@ -17,7 +16,6 @@ function App() {
       <main id="main">
         <Hero />
         <Projects />
-        <About />
         <Skills />
         <Certifications />
         <Contact />

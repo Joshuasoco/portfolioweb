@@ -34,12 +34,11 @@ System font stack (SF Pro on Apple devices) with Inter as the fallback.
 Navigation is a floating glass pill at the top (the uiarc.dev segmented control). Its highlight glides to the section in view.
 
 
-1. Hero (compact, so the work shows right away)
+1. Hero with about: name, a plain-spoken intro, links, key facts and portrait
 2. Selected work (Clak, MSME-Pathways, Plant Identifier, Reducing Readmissions, Day One: Survival)
-3. About
-4. Toolkit (bento grid)
-5. Certifications
-6. Contact
+3. Toolkit (bento grid)
+4. Certifications
+5. Contact
 
 ## Images
 

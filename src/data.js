@@ -16,8 +16,6 @@ export const profile = {
   linkedinLabel: 'linkedin.com/in/joshua-co',
   // Set to '/images/profile.jpg' once you add a photo (portrait, 4:5).
   photo: null,
-  summary:
-    'An AI enthusiast and Information Technology student with hands-on experience in AI agent workflows, prompt engineering, and web development. I build practical, AI-powered software, and I care just as much about how it feels to use as how it works.',
 }
 
 export const projects = [

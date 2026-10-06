@@ -2,9 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import SegmentedControl from './arc/segmented-control/segmented-control'
 
 const sections = [
-  { value: 'top', label: 'Home' },
+  { value: 'top', label: 'About' },
   { value: 'work', label: 'Work' },
-  { value: 'about', label: 'About' },
   { value: 'skills', label: 'Skills' },
   { value: 'contact', label: 'Contact' },
 ]
