@@ -20,25 +20,24 @@ The portfolio follows an Apple-inspired, minimalist language: content first, gen
 | `--text-3`   | `#86868b` | `#86868b` | Eyebrows, captions        |
 | `--accent`   | `#0071e3` | `#0071e3` | Buttons                   |
 
-Light and dark follow the visitor's system setting. The Clak section is always dark, like a product page.
+Light and dark follow the visitor's system setting.
 
 ## Type
 
 System font stack (SF Pro on Apple devices) with Inter as the fallback.
 
-- Hero name: 56–128px, weight 700, tracking −0.045em
+- Hero name: 52–96px, weight 700, tracking −0.045em
 - Section titles: 40–64px, weight 700, tracking −0.035em
 - Body: 17px, line height 1.47
 
 ## Page structure
 
-1. Hero
-2. Clak (featured, dark, with a live typing demo)
-3. Selected work
-4. About
-5. Toolkit (bento grid)
-6. Certifications
-7. Contact
+1. Hero (compact, so the work shows right away)
+2. Selected work (Clak, MSME-Pathways, Plant Identifier, Reducing Readmissions, Day One: Survival)
+3. About
+4. Toolkit (bento grid)
+5. Certifications
+6. Contact
 
 ## Images
 

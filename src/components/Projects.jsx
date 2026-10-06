@@ -1,8 +1,9 @@
 import { projects } from '../data.js'
+import { ArrowUpRight } from './Icons.jsx'
 import { ImageSlot } from './ImageSlot.jsx'
 import { Reveal } from './Reveal.jsx'
 
-const tones = ['green', 'mint', 'blue', 'amber']
+const tones = ['blue', 'green', 'mint', 'neutral', 'amber']
 
 export function Projects() {
   return (
@@ -11,11 +12,11 @@ export function Projects() {
         <Reveal className="section__head">
           <p className="eyebrow">Selected work</p>
           <h2 className="section__title" id="work-title">
-            More things I’ve built.
+            Things I’ve built.
           </h2>
           <p className="section__lead">
-            From fintech for the informal sector to machine learning in
-            healthcare: software that solves a real problem for real people.
+            From typing tools to fintech and healthcare: software that solves a
+            real problem for real people.
           </p>
         </Reveal>
 
@@ -53,6 +54,16 @@ export function Projects() {
                     <li key={s}>{s}</li>
                   ))}
                 </ul>
+                {p.url && (
+                  <a
+                    className="project__link"
+                    href={p.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Visit {p.urlLabel} <ArrowUpRight width={15} height={15} />
+                  </a>
+                )}
               </Reveal>
             </article>
           ))}

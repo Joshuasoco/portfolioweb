@@ -1,6 +1,5 @@
 import { About } from './components/About.jsx'
 import { Certifications } from './components/Certifications.jsx'
-import { Clak } from './components/Clak.jsx'
 import { Contact, Footer } from './components/Contact.jsx'
 import { Hero } from './components/Hero.jsx'
 import { Nav } from './components/Nav.jsx'
@@ -17,7 +16,6 @@ function App() {
       <Nav />
       <main id="main">
         <Hero />
-        <Clak />
         <Projects />
         <About />
         <Skills />

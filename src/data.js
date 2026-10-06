@@ -20,39 +20,22 @@ export const profile = {
     'An AI enthusiast and Information Technology student with hands-on experience in AI agent workflows, prompt engineering, and web development. I build practical, AI-powered software, and I care just as much about how it feels to use as how it works.',
 }
 
-export const featured = {
-  id: 'clak',
-  name: 'Clak',
-  url: 'https://claks.app',
-  urlLabel: 'claks.app',
-  eyebrow: 'Featured project',
-  headline: 'Typing, tuned to sound right.',
-  description:
-    'Clak is a free, 15-second typing test that measures your words per minute and accuracy, paired with a mechanical keyboard preview and optional switch sounds, so practice feels like using a real board.',
-  stack: ['React', 'Vite', 'Web Audio API'],
-  features: [
-    {
-      title: '15-second test',
-      body: 'Short, focused rounds you can run again and again.',
-    },
-    {
-      title: 'WPM & accuracy',
-      body: 'Live speed and precision, scored the moment you stop.',
-    },
-    {
-      title: 'Keyboard preview',
-      body: 'A mechanical keyboard on screen that reacts to every key.',
-    },
-    {
-      title: 'Switch sounds',
-      body: 'Optional, satisfying clicks, played through the browser.',
-    },
-  ],
-  image: null,
-  imageHint: '1600 × 1000',
-}
-
 export const projects = [
+  {
+    id: 'clak',
+    name: 'Clak',
+    tagline: 'A free typing test with mechanical keyboard sounds.',
+    role: 'Developer',
+    url: 'https://claks.app',
+    urlLabel: 'claks.app',
+    stack: ['React', 'Vite', 'Web Audio API'],
+    points: [
+      'Quick 15-second tests that measure your WPM and accuracy.',
+      'A mechanical keyboard preview with optional switch sounds.',
+    ],
+    image: null,
+    imageHint: '1600 × 1000',
+  },
   {
     id: 'msme-pathways',
     name: 'MSME-Pathways',

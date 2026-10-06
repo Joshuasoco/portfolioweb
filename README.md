@@ -22,7 +22,7 @@ Use `npm run preview` to preview the production build after building.
 
 ## Editing
 
-- `src/data.js`: **all content** (profile, Clak, projects, skills, certifications). Start here.
+- `src/data.js`: **all content** (profile, projects, skills, certifications). Start here.
 - `public/images/projects/`: project screenshots. See the README in that folder.
 - `src/components/`: one component per section
 - `src/App.css`: section styles

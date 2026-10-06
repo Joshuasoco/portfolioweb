@@ -35,13 +35,6 @@ export function Hero() {
           </a>
         </div>
       </div>
-      <a
-        href="#clak"
-        className="hero__scroll"
-        aria-label="Scroll to featured project"
-      >
-        <span />
-      </a>
     </section>
   )
 }

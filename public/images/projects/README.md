@@ -4,11 +4,11 @@ Drop screenshots here, then point to them from `src/data.js`:
 
 | Project               | Suggested file           | Field in `src/data.js`        |
 | --------------------- | ------------------------ | ----------------------------- |
-| Clak                  | `clak.jpg`               | `featured.image`              |
-| MSME-Pathways         | `msme-pathways.jpg`      | `projects[0].image`           |
-| Plant Identifier      | `plant-identifier.jpg`   | `projects[1].image`           |
-| Reducing Readmissions | `readmissions.jpg`       | `projects[2].image`           |
-| Day One: Survival     | `day-one-survival.jpg`   | `projects[3].image`           |
+| Clak                  | `clak.jpg`               | `projects[0].image`           |
+| MSME-Pathways         | `msme-pathways.jpg`      | `projects[1].image`           |
+| Plant Identifier      | `plant-identifier.jpg`   | `projects[2].image`           |
+| Reducing Readmissions | `readmissions.jpg`       | `projects[3].image`           |
+| Day One: Survival     | `day-one-survival.jpg`   | `projects[4].image`           |
 
 Example: `image: '/images/projects/clak.jpg'`
 

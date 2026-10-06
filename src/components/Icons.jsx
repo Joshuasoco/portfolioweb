@@ -54,19 +54,6 @@ export function MailIcon(props) {
   )
 }
 
-export function SoundIcon({ on, ...props }) {
-  return (
-    <svg {...base} {...props}>
-      <path d="M4 10v4h3l5 4V6L7 10H4Z" />
-      {on ? (
-        <path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11" />
-      ) : (
-        <path d="m16 10 4 4m0-4-4 4" />
-      )}
-    </svg>
-  )
-}
-
 export function GitHubIcon(props) {
   return (
     <svg {...base} fill="currentColor" stroke="none" {...props}>
