@@ -25,7 +25,7 @@ Use `npm run preview` to preview the production build after building.
 - `src/data.js`: **all content** (profile, projects, skills, certifications). Start here.
 - `public/images/projects/`: project screenshots. See the README in that folder.
 - `src/components/`: one component per section
-- `src/components/arc/`: the [uiarc.dev hero-section](https://uiarc.dev/components/blocks/hero-section) block and the Arc components it uses (TypeScript, CSS modules). Its sample text lives in `blocks/hero-section/hero-lumen.tsx`, `hero-relay.tsx` and `hero-cadence.tsx`; sample logos and photo are in `public/block-logos/` and `public/media/`
+- `src/components/arc/`: the [uiarc.dev](https://uiarc.dev) segmented control (and its tokens) that the glass nav pill is built on
 - `src/App.css`: section styles
 - `src/index.css`: design tokens (colors, type, radii) and global styles
 - `docs/DESIGN.md`: portfolio design guide

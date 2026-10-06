@@ -24,8 +24,8 @@
   --radius: 22px;
   --radius-lg: 30px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --nav-h: 52px;
-  /* Fonts for the uiarc hero (loaded in index.html). */
+  --nav-h: 72px;
+  /* Fonts for the uiarc nav pill (loaded in index.html). */
   --font-geist: 'Geist';
   --font-inter: 'Inter';
 

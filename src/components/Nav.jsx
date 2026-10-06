@@ -1,70 +1,57 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import SegmentedControl from './arc/segmented-control/segmented-control'
 
-const links = [
-  { href: '#work', label: 'Work' },
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#contact', label: 'Contact' },
+const sections = [
+  { value: 'top', label: 'Home' },
+  { value: 'work', label: 'Work' },
+  { value: 'about', label: 'About' },
+  { value: 'skills', label: 'Skills' },
+  { value: 'contact', label: 'Contact' },
 ]
 
+// Floating glass pill, built on the uiarc segmented control. The highlight
+// follows the section in view, and choosing one scrolls to it.
 export function Nav() {
-  const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState('top')
+  const lockUntil = useRef(0)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (performance.now() < lockUntil.current) return
+        const hit = entries.find((e) => e.isIntersecting)
+        if (hit) setActive(hit.target.id)
+      },
+      { rootMargin: '-45% 0px -50% 0px' },
+    )
+    sections.forEach(({ value }) => {
+      const el = document.getElementById(value)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
   }, [])
 
-  useEffect(() => {
-    if (!open) return
-    const onKey = (e) => e.key === 'Escape' && setOpen(false)
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [open])
+  const go = (value) => {
+    setActive(value)
+    // Hold the highlight on the chosen section while the page scrolls past others.
+    lockUntil.current = performance.now() + 900
+    document.getElementById(value)?.scrollIntoView({ behavior: 'smooth' })
+    history.replaceState(
+      null,
+      '',
+      value === 'top' ? location.pathname : `#${value}`,
+    )
+  }
 
   return (
-    <header
-      className={`nav ${scrolled ? 'nav--scrolled' : ''} ${open ? 'nav--open' : ''}`}
-    >
-      <nav className="nav__bar" aria-label="Primary">
-        <a href="#top" className="nav__brand" onClick={() => setOpen(false)}>
-          Joshua Co
-        </a>
-        <ul className="nav__links">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a href={link.href}>{link.label}</a>
-            </li>
-          ))}
-        </ul>
-        <a href="#contact" className="nav__cta">
-          Get in touch
-        </a>
-        <button
-          type="button"
-          className="nav__toggle"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span />
-          <span />
-        </button>
-      </nav>
-      <div id="mobile-menu" className="nav__sheet" hidden={!open}>
-        <ul>
-          {links.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} onClick={() => setOpen(false)}>
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </header>
+    <nav className="nav-pill" aria-label="Primary">
+      <SegmentedControl
+        label="Sections"
+        options={sections}
+        value={active}
+        onValueChange={go}
+        className="nav-pill__switch"
+      />
+    </nav>
   )
 }

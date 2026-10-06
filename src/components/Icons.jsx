@@ -18,6 +18,14 @@ export function ArrowUpRight(props) {
   )
 }
 
+export function ChevronRight(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="m9 6 6 6-6 6" />
+    </svg>
+  )
+}
+
 export function ImageIcon(props) {
   return (
     <svg {...base} {...props}>

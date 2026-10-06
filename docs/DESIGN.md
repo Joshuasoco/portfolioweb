@@ -31,7 +31,10 @@ System font stack (SF Pro on Apple devices) with Inter as the fallback.
 
 ## Page structure
 
-1. Hero: the uiarc.dev `hero-section` block, unchanged, with its Screenshot / Workflow / Mesh switch (`src/components/arc/`)
+Navigation is a floating glass pill at the top (the uiarc.dev segmented control). Its highlight glides to the section in view.
+
+
+1. Hero (compact, so the work shows right away)
 2. Selected work (Clak, MSME-Pathways, Plant Identifier, Reducing Readmissions, Day One: Survival)
 3. About
 4. Toolkit (bento grid)
