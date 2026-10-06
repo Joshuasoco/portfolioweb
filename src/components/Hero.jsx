@@ -73,7 +73,8 @@ export function Hero() {
             <dt>Focus</dt>
             <dd>
               AI agents &amp; web development
-              <span>Prompt engineering, MCP, React</span>
+              <span>Prompt engineering, RAG, agents, MCP</span>
+              <span>React, TypeScript, Python</span>
             </dd>
           </div>
           <div>

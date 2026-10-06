@@ -1,7 +1,7 @@
 // All portfolio content lives here, so updating the site never means touching layout code.
 //
 // Images: drop files into `public/images/projects/` and set `image` to the path,
-// for example `image: '/images/projects/clak.jpg'`. Leave it as `null` to show the
+// for example `image: '/images/projects/clak.png'`. Leave it as `null` to show the
 // placeholder frame. Recommended size is noted on each placeholder.
 
 export const profile = {
@@ -14,8 +14,8 @@ export const profile = {
   githubLabel: 'github.com/Joshuasoco',
   linkedin: 'https://www.linkedin.com/in/joshua-co-92728b298',
   linkedinLabel: 'linkedin.com/in/joshua-co',
-  // Set to '/images/profile.jpg' once you add a photo (portrait, 4:5).
-  photo: null,
+  // Set to '/images/profile.png' once you add a photo (portrait, 4:5).
+  photo: '/images/profile.png',
 }
 
 export const projects = [
@@ -31,7 +31,7 @@ export const projects = [
       'Quick 15-second tests that measure your WPM and accuracy.',
       'A mechanical keyboard preview with optional switch sounds.',
     ],
-    image: null,
+    image: '/images/projects/clak.png',
     imageHint: '1600 × 1000',
   },
   {
@@ -39,6 +39,8 @@ export const projects = [
     name: 'MSME-Pathways',
     tagline: 'Smart loan support for the informal sector.',
     role: 'AI & Mobile Developer',
+    url: 'https://msmepath.netlify.app',
+    urlLabel: 'msmepath.netlify.app',
     stack: ['Python', 'LangChain', 'Flutter', 'MongoDB'],
     points: [
       'A conversational AI agent that explains loan terms in Taglish and simple local dialects.',
@@ -46,7 +48,7 @@ export const projects = [
       'A mobile-first interface designed for sari-sari store owners and market vendors with low digital literacy.',
     ],
     note: 'Aligned with SDG 9: Industry, Innovation and Infrastructure.',
-    image: null,
+    image: '/images/projects/msme-pathways.png',
     imageHint: '1600 × 1000',
   },
   {
@@ -54,6 +56,8 @@ export const projects = [
     name: 'Plant Identifier',
     tagline: 'Know the plants around you.',
     role: 'Front-End Developer',
+    url: 'https://plant-identifier-scanner.netlify.app/login',
+    urlLabel: 'plant-identifier-scanner.netlify.app',
     stack: ['React', 'Flutter', 'TensorFlow', 'Python'],
     points: [
       'AI-powered identification of Philippine plant species, with care recommendations for each.',
@@ -61,7 +65,7 @@ export const projects = [
       'Functional testing that reached 95% classification accuracy.',
     ],
     metric: { value: '95%', label: 'classification accuracy' },
-    image: null,
+    image: '/images/projects/plant-identifier.png',
     imageHint: '1600 × 1000',
   },
   {
@@ -75,7 +79,7 @@ export const projects = [
       'Careful data validation so predictions rest on clean inputs.',
       'A clear interface that helps providers make faster, better-informed discharge decisions.',
     ],
-    image: null,
+    image: '/images/projects/readmission.png',
     imageHint: '1600 × 1000',
   },
   {
@@ -89,7 +93,7 @@ export const projects = [
       'Wallet connectivity built straight into the game.',
       'An NFT-based in-game shop for blockchain-backed ownership of survival items.',
     ],
-    image: null,
+    image: '/images/projects/day-one-survival.png',
     imageHint: '1600 × 1000',
   },
 ]
