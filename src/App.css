@@ -128,26 +128,6 @@
   background: var(--chip);
 }
 
-.link-arrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  font-size: 17px;
-  color: var(--link);
-}
-
-.link-arrow:hover {
-  text-decoration: underline;
-}
-
-.link-arrow svg {
-  transition: transform 0.25s var(--ease);
-}
-
-.link-arrow:hover svg {
-  transform: translateX(3px);
-}
-
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -323,73 +303,161 @@
   }
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero (mesh gradient, editorial type) ---------- */
 
 .hero {
   position: relative;
-  padding: calc(var(--nav-h) + clamp(48px, 7vw, 88px)) 0 clamp(8px, 2vw, 24px);
-  text-align: center;
-  overflow: hidden;
+  display: grid;
+  min-height: 100svh;
   isolation: isolate;
+  overflow: hidden;
 }
 
-.hero::before {
-  content: '';
+.mesh {
   position: absolute;
-  inset: -20% -10% auto;
-  height: 90%;
-  z-index: -1;
-  background:
-    radial-gradient(40% 50% at 30% 40%, rgba(0, 113, 227, 0.1), transparent 70%),
-    radial-gradient(35% 45% at 72% 35%, rgba(175, 82, 222, 0.09), transparent 70%),
-    radial-gradient(30% 40% at 55% 70%, rgba(52, 199, 89, 0.07), transparent 70%);
-  filter: blur(20px);
-  animation: drift 18s ease-in-out infinite alternate;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-@keyframes drift {
-  to {
-    transform: translate3d(2%, 3%, 0) scale(1.05);
+.mesh__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.48s ease;
+}
+
+.mesh[data-painted] .mesh__canvas {
+  opacity: 1;
+}
+
+.hero__mesh {
+  z-index: -1;
+  --mesh-base: #f2ede7;
+  --mesh-1: #bdd3ec;
+  --mesh-2: #c3c6ff;
+  --mesh-3: #ffd0b0;
+  --mesh-4: #f6bfd6;
+  --mesh-5: #cfe8dc;
+  --mesh-6: #fff3dc;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero__mesh {
+    --mesh-base: #09090f;
+    --mesh-1: #0d3a47;
+    --mesh-2: #2a2f86;
+    --mesh-3: #5a2a3c;
+    --mesh-4: #3a1f5a;
+    --mesh-5: #7a3a22;
+    --mesh-6: #12142c;
   }
 }
 
-.hero__inner > * {
-  animation: rise 1.1s var(--ease) both;
+/* Scrim keeps body text readable wherever the mesh drifts, and eases into the page below. */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    color-mix(in srgb, var(--bg) 22%, transparent)
+  );
+  pointer-events: none;
 }
 
-.hero__inner > :nth-child(2) {
-  animation-delay: 80ms;
+.hero__inner {
+  display: grid;
+  grid-template-rows: 1fr auto auto 1fr auto;
+  gap: 40px;
+  width: min(1080px, 100% - 44px);
+  margin-inline: auto;
+  padding: calc(var(--nav-h) + clamp(32px, 6svh, 72px)) 0 36px;
 }
-.hero__inner > :nth-child(3) {
-  animation-delay: 160ms;
+
+.hero__head {
+  grid-row: 2;
 }
-.hero__inner > :nth-child(4) {
-  animation-delay: 240ms;
+
+.hero__row {
+  grid-row: 3;
 }
-.hero__inner > :nth-child(5) {
-  animation-delay: 320ms;
+
+.hero__projects {
+  grid-row: 5;
+}
+
+.hero__inner > * {
+  animation: rise 0.64s var(--ease) both;
+}
+
+.hero__row {
+  animation-delay: 90ms;
+}
+
+.hero__projects {
+  animation-delay: 180ms;
 }
 
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(12px);
+    filter: blur(4px);
   }
 }
 
-.hero__status {
+.hero__eyebrow {
+  margin-bottom: 18px;
+  font-size: 15px;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--text) 66%, transparent);
+}
+
+.hero__title {
+  max-width: 14ch;
+  font-size: clamp(44px, 8vw, 112px);
+  line-height: 0.98;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.hero__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 32px 64px;
+}
+
+.hero__lead {
+  max-width: 520px;
+  font-size: clamp(17px, 1.8vw, 21px);
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--text) 76%, transparent);
+}
+
+.hero__cta {
+  display: grid;
+  justify-items: end;
+  gap: 12px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero__fine {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   font-size: 13px;
-  color: var(--text-2);
-  margin-bottom: 22px;
+  color: color-mix(in srgb, var(--text) 62%, transparent);
 }
 
 .hero__dot {
@@ -410,53 +478,79 @@
   }
 }
 
-.hero__title {
-  font-size: clamp(52px, 9vw, 96px);
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: -0.045em;
-  background: linear-gradient(180deg, var(--text) 30%, color-mix(in srgb, var(--text) 62%, transparent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  padding-bottom: 0.06em;
+.hero__projects {
+  display: grid;
+  gap: 18px;
+  padding-top: 22px;
+  border-top: 1px solid color-mix(in srgb, var(--text) 14%, transparent);
 }
 
-.hero__roles {
-  margin-top: 14px;
-  font-size: clamp(19px, 2.4vw, 24px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  background: linear-gradient(90deg, #0071e3, #af52de 55%, #ff6482);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.hero__projects p {
+  font-size: 13px;
+  color: color-mix(in srgb, var(--text) 62%, transparent);
 }
 
-.hero__roles > span {
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.hero__sep {
-  margin-inline: 0.4em;
-}
-
-.hero__lead {
-  max-width: 560px;
-  margin: 16px auto 0;
-  font-size: clamp(17px, 2vw, 19px);
-  line-height: 1.4;
-  color: var(--text-2);
-}
-
-.hero__actions {
+.hero__projects ul {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 16px 28px;
-  margin-top: 28px;
+  justify-content: space-between;
+  gap: 14px 32px;
+}
+
+.hero__projects a {
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: color-mix(in srgb, var(--text) 80%, transparent);
+  transition: color 0.2s ease;
+}
+
+.hero__projects a:hover {
+  color: var(--text);
+}
+
+.button--glass {
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
+  border-color: color-mix(in srgb, var(--text) 12%, transparent);
+  color: var(--text);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.button--glass:hover {
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+}
+
+@media (max-width: 800px) {
+  .hero__row {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+  .hero__cta {
+    justify-items: start;
+  }
+  .hero__projects ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .hero__inner {
+    gap: 28px;
+    padding-bottom: 24px;
+  }
+  .hero__cta,
+  .hero__actions {
+    width: 100%;
+  }
+  .hero__actions > * {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+  .hero__projects a {
+    font-size: 16px;
+  }
 }
 
 /* ---------- Image placeholder ---------- */

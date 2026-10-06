@@ -24,6 +24,7 @@ export function Projects() {
           {projects.map((p, i) => (
             <article
               className={`project ${i % 2 ? 'project--flip' : ''}`}
+              id={p.id}
               key={p.id}
             >
               <Reveal className="project__media">
