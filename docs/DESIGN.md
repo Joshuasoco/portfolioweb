@@ -26,13 +26,12 @@ Light and dark follow the visitor's system setting.
 
 System font stack (SF Pro on Apple devices) with Inter as the fallback.
 
-- Hero headline: 44–112px, weight 700, tracking −0.045em
 - Section titles: 40–64px, weight 700, tracking −0.035em
 - Body: 17px, line height 1.47
 
 ## Page structure
 
-1. Hero: editorial headline over a drifting mesh gradient (WebGL, adapted from uiarc.dev's hero-section "Mesh" design), with links to every project along the bottom edge
+1. Hero: the uiarc.dev `hero-section` block, unchanged, with its Screenshot / Workflow / Mesh switch (`src/components/arc/`)
 2. Selected work (Clak, MSME-Pathways, Plant Identifier, Reducing Readmissions, Day One: Survival)
 3. About
 4. Toolkit (bento grid)
