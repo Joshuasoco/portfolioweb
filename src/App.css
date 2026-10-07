@@ -65,11 +65,16 @@
 /* ---------- Reveal on scroll ---------- */
 
 .reveal {
-  opacity: 0;
-  transform: translateY(28px);
+  opacity: 1;
+  transform: none;
   transition:
     opacity 0.9s var(--ease) var(--reveal-delay, 0ms),
     transform 0.9s var(--ease) var(--reveal-delay, 0ms);
+}
+
+.reveal.is-pending {
+  opacity: 0;
+  transform: translateY(28px);
 }
 
 .reveal.is-visible {
@@ -78,7 +83,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .reveal.is-pending {
     opacity: 1;
     transform: none;
   }

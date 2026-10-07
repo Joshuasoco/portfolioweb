@@ -1,0 +1,38 @@
+{
+  "/images/profile.png": {
+    "src": "/images/profile-800.webp",
+    "srcSet": "/images/profile-400.webp 400w, /images/profile-800.webp 800w",
+    "width": 800,
+    "height": 800
+  },
+  "/images/projects/clak.png": {
+    "src": "/images/projects/clak-1440.webp",
+    "srcSet": "/images/projects/clak-480.webp 480w, /images/projects/clak-960.webp 960w, /images/projects/clak-1440.webp 1440w",
+    "width": 1440,
+    "height": 810
+  },
+  "/images/projects/day-one-survival.png": {
+    "src": "/images/projects/day-one-survival-1440.webp",
+    "srcSet": "/images/projects/day-one-survival-480.webp 480w, /images/projects/day-one-survival-960.webp 960w, /images/projects/day-one-survival-1440.webp 1440w",
+    "width": 1440,
+    "height": 813
+  },
+  "/images/projects/msme-pathways.png": {
+    "src": "/images/projects/msme-pathways-1440.webp",
+    "srcSet": "/images/projects/msme-pathways-480.webp 480w, /images/projects/msme-pathways-960.webp 960w, /images/projects/msme-pathways-1440.webp 1440w",
+    "width": 1440,
+    "height": 810
+  },
+  "/images/projects/plant-identifier.png": {
+    "src": "/images/projects/plant-identifier-1440.webp",
+    "srcSet": "/images/projects/plant-identifier-480.webp 480w, /images/projects/plant-identifier-960.webp 960w, /images/projects/plant-identifier-1440.webp 1440w",
+    "width": 1440,
+    "height": 810
+  },
+  "/images/projects/readmission.png": {
+    "src": "/images/projects/readmission-1440.webp",
+    "srcSet": "/images/projects/readmission-480.webp 480w, /images/projects/readmission-960.webp 960w, /images/projects/readmission-1440.webp 1440w",
+    "width": 1440,
+    "height": 810
+  }
+}

@@ -1,4 +1,5 @@
 import { ImageIcon, UserIcon } from './Icons.jsx'
+import imageAssets from '../image-assets.json'
 
 // Shows the image when `src` is set; otherwise a placeholder frame
 // that tells you what to drop in and at what size.
@@ -12,9 +13,20 @@ export function ImageSlot({
   className = '',
 }) {
   if (src) {
+    const image = imageAssets[src]
     return (
       <div className={`image-slot ${className}`} style={{ aspectRatio: ratio }}>
-        <img src={src} alt={alt} loading="lazy" decoding="async" />
+        <img
+          src={image?.src ?? src}
+          srcSet={image?.srcSet}
+          sizes={portrait ? '(max-width: 860px) 132px, (max-width: 1124px) 32vw, 350px' : '(max-width: 860px) calc(100vw - 44px), (max-width: 1124px) 46vw, 520px'}
+          width={image?.width}
+          height={image?.height}
+          alt={alt}
+          loading={portrait ? 'eager' : 'lazy'}
+          fetchPriority={portrait ? 'high' : 'auto'}
+          decoding="async"
+        />
       </div>
     )
   }

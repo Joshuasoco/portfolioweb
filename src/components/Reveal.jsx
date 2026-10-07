@@ -13,18 +13,27 @@ export function Reveal({
 
   useEffect(() => {
     const el = ref.current
-    if (!el) return
+    if (!el || typeof IntersectionObserver === 'undefined' ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    // The HTML is readable before hydration and if JavaScript never runs.
+    // Only content below the initial viewport needs a scroll reveal.
+    if (el.getBoundingClientRect().top < window.innerHeight * 0.9) return
+    el.classList.add('is-pending')
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           el.classList.add('is-visible')
+          el.classList.remove('is-pending')
           observer.disconnect()
         }
       },
       { rootMargin: '0px 0px -10% 0px', threshold: 0.12 },
     )
     observer.observe(el)
-    return () => observer.disconnect()
+    return () => {
+      observer.disconnect()
+      el.classList.remove('is-pending')
+    }
   }, [])
 
   return (
