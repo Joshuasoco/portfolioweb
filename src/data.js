@@ -56,8 +56,8 @@ export const projects = [
     name: 'Plant Identifier',
     tagline: 'Know the plants around you.',
     role: 'Front-End Developer',
-    url: 'https://plant-identifier-scanner.netlify.app/login',
-    urlLabel: 'plant-identifier-scanner.netlify.app',
+    url: 'https://plant-identify.netlify.app/',
+    urlLabel: 'plant-identify.netlify.app',
     stack: ['React', 'Flutter', 'TensorFlow', 'Python'],
     points: [
       'AI-powered identification of Philippine plant species, with care recommendations for each.',
