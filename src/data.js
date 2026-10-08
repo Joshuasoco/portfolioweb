@@ -166,11 +166,15 @@ export const certifications = [
     title: 'AI Fluency: Framework & Foundations',
     issuer: 'Anthropic',
     kind: 'Completion',
+    image: '/images/certificates/ai-fluency.webp',
+    thumbnail: '/images/certificates/ai-fluency-480.webp',
   },
   {
     title: 'Build, Break, Repeat',
     issuer: 'AWS Philippines',
     kind: 'Participation',
+    image: '/images/certificates/aws-community-day.webp',
+    thumbnail: '/images/certificates/aws-community-day-480.webp',
   },
   {
     title: 'Agentic Coding using Gemini Pro and Antigravity',
@@ -181,16 +185,22 @@ export const certifications = [
     title: 'Prompt Like an Engineer',
     issuer: 'Cisco Networking Academy',
     kind: 'Completion',
+    image: '/images/certificates/prompt-like-an-engineer.webp',
+    thumbnail: '/images/certificates/prompt-like-an-engineer-480.webp',
   },
   {
     title: 'What Is Generative AI?',
     issuer: 'LinkedIn Learning',
     kind: 'Completion',
+    image: '/images/certificates/generative-ai.webp',
+    thumbnail: '/images/certificates/generative-ai-480.webp',
   },
   {
     title: 'AWS Fundamentals',
     issuer: 'Zuitt Learning Institute',
     kind: 'Completion',
+    image: '/images/certificates/aws-fundamentals.webp',
+    thumbnail: '/images/certificates/aws-fundamentals-480.webp',
   },
 ]
 
