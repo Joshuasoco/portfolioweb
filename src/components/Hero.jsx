@@ -13,7 +13,8 @@ export function Hero() {
           </h1>
           <p className="hero__intro">
             IT student and web developer in {profile.location}. I build AI agent
-            workflows and web apps that are simple to use.
+            workflows and web apps that are simple to use. My focus is on combining
+            clear interfaces with AI and automation to make everyday tasks easier.
           </p>
 
           <div className="hero__actions">
