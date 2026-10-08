@@ -1,8 +1,6 @@
-import { education, languages, profile, projects } from '../data.js'
+import { education, languages, profile } from '../data.js'
 import { ArrowUpRight } from './Icons.jsx'
 import { ImageSlot } from './ImageSlot.jsx'
-
-const clak = projects.find((p) => p.id === 'clak')
 
 // Hero and about in one: who I am, what I'm building, and the key facts.
 export function Hero() {
@@ -15,11 +13,7 @@ export function Hero() {
           </h1>
           <p className="hero__intro">
             IT student and web developer in {profile.location}. I build AI agent
-            workflows and web apps that are simple to use, like{' '}
-            <a href={clak.url} target="_blank" rel="noreferrer">
-              {clak.name}
-            </a>
-            , {clak.tagline.charAt(0).toLowerCase() + clak.tagline.slice(1)}
+            workflows and web apps that are simple to use.
           </p>
 
           <div className="hero__actions">
