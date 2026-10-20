@@ -36,7 +36,7 @@ test('the portrait is prioritized and project images have responsive sources', (
   const screenshot = html.match(/<img[^>]+alt="Clak screenshot"[^>]*>/)?.[0]
   assert.ok(screenshot)
   assert.match(screenshot, /loading="lazy"/)
-  assert.match(screenshot, /srcSet="[^"]+480w[^"]+960w[^"]+1440w"/i)
+  assert.match(screenshot, /srcSet="[^"]+480w[^"]+960w[^"]+1200w"/i)
 })
 
 test('all optimized image references resolve to files in the deployment', async () => {

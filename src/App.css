@@ -355,6 +355,10 @@
   object-fit: cover;
 }
 
+#clak .image-slot img {
+  object-fit: contain;
+}
+
 .image-slot--empty {
   display: grid;
   place-items: center;
