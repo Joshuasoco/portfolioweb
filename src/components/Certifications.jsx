@@ -8,14 +8,13 @@ export function Certifications() {
       id="certifications"
       aria-labelledby="certs-title"
     >
-      <div className="container">
-        <Reveal className="section__head">
-          <p className="eyebrow">Certifications</p>
+      <div className="container frame" data-frame="Certifications">
+        <Reveal className="section__head" layer="Section header">
           <h2 className="section__title" id="certs-title">
             Always learning.
           </h2>
         </Reveal>
-        <Reveal as="ul" className="certs">
+        <Reveal as="ul" className="certs" layer="Certificates">
           {certifications.map((c) => (
             <li className={`cert${c.image ? '' : ' cert--text'}`} key={c.title}>
               {c.image && (

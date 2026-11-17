@@ -8,9 +8,8 @@ const tones = ['blue', 'green', 'mint', 'neutral', 'amber']
 export function Projects() {
   return (
     <section className="section" id="work" aria-labelledby="work-title">
-      <div className="container">
-        <Reveal className="section__head">
-          <p className="eyebrow">Selected work</p>
+      <div className="container frame" data-frame="Work">
+        <Reveal className="section__head" layer="Section header">
           <h2 className="section__title" id="work-title">
             Things I’ve built.
           </h2>
@@ -27,7 +26,7 @@ export function Projects() {
               id={p.id}
               key={p.id}
             >
-              <Reveal className="project__media">
+              <Reveal className="project__media" layer="Screenshot">
                 <ImageSlot
                   src={p.image}
                   alt={`${p.name} screenshot`}
@@ -35,7 +34,7 @@ export function Projects() {
                   tone={tones[i % tones.length]}
                 />
               </Reveal>
-              <Reveal className="project__body" delay={100}>
+              <Reveal className="project__body" layer={p.name}>
                 <p className="project__role">{p.role}</p>
                 <h3 className="project__name">{p.name}</h3>
                 <p className="project__tagline">{p.tagline}</p>

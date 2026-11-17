@@ -4,9 +4,8 @@ import { Reveal } from './Reveal.jsx'
 export function Skills() {
   return (
     <section className="section" id="skills" aria-labelledby="skills-title">
-      <div className="container">
-        <Reveal className="section__head">
-          <p className="eyebrow">Toolkit</p>
+      <div className="container frame" data-frame="Skills">
+        <Reveal className="section__head" layer="Section header">
           <h2 className="section__title" id="skills-title">
             The right tool for the job.
           </h2>
@@ -16,7 +15,7 @@ export function Skills() {
             <Reveal
               key={group.title}
               className={`tile ${group.span ? `tile--${group.span}` : ''} ${i === 0 ? 'tile--accent' : ''}`}
-              delay={(i % 3) * 80}
+              layer={group.title}
             >
               <h3 className="tile__title">{group.title}</h3>
               <ul className="tile__list">

@@ -7,7 +7,7 @@
 export const profile = {
   name: 'Joshua Co',
   firstName: 'Joshua',
-  roles: ['IT Student', 'AI Enthusiast', 'Web Developer'],
+  roles: ['IT Student', 'AI Enthusiast', 'Full Stack Developer'],
   location: 'Dagupan City, Philippines',
   email: 'joshuasoyco@gmail.com',
   github: 'https://github.com/Joshuasoco',
@@ -115,6 +115,8 @@ export const skills = [
     title: 'Frontend',
     items: [
       'React',
+      'React Native',
+      'Flutter',
       'Vite',
       'Tailwind CSS',
       'shadcn/ui',
@@ -129,7 +131,7 @@ export const skills = [
   },
   {
     title: 'Languages',
-    items: ['Python', 'TypeScript', 'JavaScript', 'Java', 'PHP', 'Solidity'],
+    items: ['Python', 'TypeScript', 'JavaScript', 'Java', 'Kotlin', 'PHP', 'Solidity'],
   },
   {
     title: 'Backend',
@@ -150,6 +152,9 @@ export const skills = [
       'Vercel',
       'Postman',
       'Insomnia',
+      'Figma',
+      'FigCraft',
+      'Adobe',
     ],
   },
 ]

@@ -7,8 +7,7 @@ const year = new Date().getFullYear()
 export function Contact() {
   return (
     <section className="contact" id="contact" aria-labelledby="contact-title">
-      <Reveal className="container contact__inner">
-        <p className="eyebrow">Contact</p>
+      <Reveal className="container frame contact__inner" data-frame="Contact" layer="Contact">
         <h2 className="contact__title" id="contact-title">
           Let’s build something
           <br />
@@ -57,8 +56,7 @@ export function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <p>
-          © {year} {profile.name}. Designed and built in{' '}
-          {profile.location.split(',')[0]}.
+          © {year} {profile.name}. Designed and built with love.
         </p>
         <p>
           <a href="#top">Back to top ↑</a>

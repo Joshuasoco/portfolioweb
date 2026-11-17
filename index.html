@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--seo-head-->
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,14 +13,10 @@
       rel="stylesheet"
     />
     <script>
-      // The uiarc nav pill themes off data-theme; mirror the system setting.
-      ;(() => {
-        const mq = matchMedia('(prefers-color-scheme: dark)')
-        const set = () =>
-          (document.documentElement.dataset.theme = mq.matches ? 'dark' : 'light')
-        set()
-        mq.addEventListener('change', set)
-      })()
+      // Light only. js-build lets the hero start as a wireframe that the cursors finish.
+      document.documentElement.dataset.theme = 'light'
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
+        document.documentElement.classList.add('js-build')
     </script>
   </head>
   <body>
