@@ -43,7 +43,7 @@ const portrait = await sharp(`${directory}/profile.png`)
 const card = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
   <rect width="1200" height="630" fill="#f5f5f7"/>
   <text x="72" y="215" fill="#1d1d1f" font-family="Arial, sans-serif" font-size="72" font-weight="700">${escapeXml(profile.name)}</text>
-  <text x="74" y="285" fill="#424245" font-family="Arial, sans-serif" font-size="31">Web Developer &amp; AI Enthusiast</text>
+  <text x="74" y="285" fill="#424245" font-family="Arial, sans-serif" font-size="31">Full Stack Developer &amp; AI Enthusiast</text>
   <text x="74" y="350" fill="#6e6e73" font-family="Arial, sans-serif" font-size="25">${escapeXml(profile.location)}</text>
   <text x="74" y="490" fill="#0071e3" font-family="Arial, sans-serif" font-size="24">Projects · AI agents · Web apps</text>
 </svg>`)
