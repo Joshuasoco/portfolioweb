@@ -493,6 +493,18 @@
   object-fit: contain;
 }
 
+/* Transparent laptop renders sit straight on the page, no card. */
+:is(#msme-pathways, #plant-identifier, #readmission) .image-slot {
+  border-radius: 0;
+  overflow: visible;
+  background: none;
+  box-shadow: none;
+}
+
+:is(#msme-pathways, #plant-identifier, #readmission) .image-slot img {
+  object-fit: contain;
+}
+
 .image-slot--empty {
   display: grid;
   place-items: center;
