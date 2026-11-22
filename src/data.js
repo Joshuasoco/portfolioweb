@@ -21,6 +21,7 @@ export const profile = {
 export const projects = [
   {
     id: 'clak',
+    badge: 'Side project',
     name: 'Clak',
     tagline: 'A free typing test with mechanical keyboard sounds.',
     role: 'Developer',
@@ -32,6 +33,40 @@ export const projects = [
       'A mechanical keyboard preview with optional switch sounds.',
     ],
     image: '/images/projects/clak.png',
+    imageHint: '1600 × 1000',
+  },
+  {
+    id: 'screenshot-shelf',
+    badge: 'Side project',
+    name: 'Screenshot Shelf',
+    tagline:
+      'A macOS menu bar app that keeps screenshots on a floating shelf, ready to paste, compare, or open on your phone.',
+    role: 'Developer',
+    url: 'https://getshelfscreen.onrender.com',
+    urlLabel: 'getshelfscreen.onrender.com',
+    stack: ['HTML/CSS', 'JavaScript', 'Swift', 'AppKit', 'ScreenCaptureKit'],
+    points: [
+      'Capture part of your screen and paste it immediately, or drag the image from the shelf into another app.',
+      'Retake the same area and compare both screenshots with a slider, then copy them side by side.',
+    ],
+    image: '/images/projects/screenshot-shelf.png',
+    imageHint: '1600 × 1000',
+  },
+  {
+    id: 'probinsya-drive',
+    badge: 'Side project',
+    name: 'Probinsya Drive',
+    tagline:
+      'A browser game where you drive a jeepney forever through the Philippine countryside. No missions, scores, or timers.',
+    role: 'Developer',
+    url: 'https://probinsya-drive.onrender.com/',
+    urlLabel: 'probinsya-drive.onrender.com',
+    stack: ['TypeScript', 'three.js', 'Vite', 'Web Audio API', 'Node.js', 'WebSockets'],
+    points: [
+      'Drive with the keyboard on desktop, or scan a QR code and steer with your phone by tilt or touch, with nothing to install.',
+      'A 3D countryside built with three.js, an engine sound made with the Web Audio API, and an optional manual gearbox.',
+    ],
+    image: '/images/projects/probinsya-drive.png',
     imageHint: '1600 × 1000',
   },
   {
@@ -131,7 +166,7 @@ export const skills = [
   },
   {
     title: 'Languages',
-    items: ['Python', 'TypeScript', 'JavaScript', 'Java', 'Kotlin', 'PHP', 'Solidity'],
+    items: ['Python', 'TypeScript', 'JavaScript', 'Swift', 'Java', 'Kotlin', 'PHP', 'Solidity'],
   },
   {
     title: 'Backend',

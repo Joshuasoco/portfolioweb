@@ -489,8 +489,33 @@
   object-fit: cover;
 }
 
-#clak .image-slot img {
+.project--side .image-slot img {
   object-fit: contain;
+}
+
+/* Full-bleed shot: fill the frame; crops a little off each side. */
+#probinsya-drive .image-slot img {
+  object-fit: cover;
+}
+
+/* macOS window dots on the side-project cards. */
+.project--side .image-slot::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  z-index: 1;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff5f57;
+  box-shadow: 20px 0 #febc2e, 40px 0 #28c840;
+}
+
+/* Wireframe stage: dots go gray until the card is built. */
+.js-build .project--side [data-build]:not(.is-built) .image-slot::before {
+  background: var(--line-strong);
+  box-shadow: 20px 0 var(--line-strong), 40px 0 var(--line-strong);
 }
 
 /* Transparent laptop renders sit straight on the page, no card. */
@@ -598,6 +623,10 @@
   align-items: center;
 }
 
+.project--flip {
+  grid-template-columns: 1fr 1.25fr;
+}
+
 .project--flip .project__media {
   order: 2;
 }
@@ -616,6 +645,18 @@
   font-weight: 600;
   color: var(--text-3);
   margin-bottom: 10px;
+}
+
+.project__badge {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--chip);
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 600;
+  vertical-align: 1px;
 }
 
 .project__name {
@@ -696,7 +737,8 @@
 }
 
 @media (max-width: 860px) {
-  .project {
+  .project,
+  .project--flip {
     grid-template-columns: 1fr;
   }
   .project--flip .project__media {

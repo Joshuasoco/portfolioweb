@@ -14,15 +14,14 @@ export function Projects() {
             Things I’ve built.
           </h2>
           <p className="section__lead">
-            From typing tools to fintech and healthcare: software that solves a
-            real problem for real people.
+            Small tools and bigger systems, built for people to use.
           </p>
         </Reveal>
 
         <div className="projects">
           {projects.map((p, i) => (
             <article
-              className={`project ${i % 2 ? 'project--flip' : ''}`}
+              className={`project ${i % 2 ? 'project--flip' : ''} ${p.badge ? 'project--side' : ''}`}
               id={p.id}
               key={p.id}
             >
@@ -35,7 +34,10 @@ export function Projects() {
                 />
               </Reveal>
               <Reveal className="project__body" layer={p.name}>
-                <p className="project__role">{p.role}</p>
+                <p className="project__role">
+                  {p.role}
+                  {p.badge && <span className="project__badge">{p.badge}</span>}
+                </p>
                 <h3 className="project__name">{p.name}</h3>
                 <p className="project__tagline">{p.tagline}</p>
                 {p.metric && (
